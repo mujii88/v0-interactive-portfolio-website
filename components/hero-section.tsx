@@ -42,12 +42,12 @@ export function HeroSection() {
             className={`transition-all duration-1000 ${isVisible ? "animate-fade-in-up" : "opacity-0"} order-1 lg:order-2`}
           >
             <h1 className="text-5xl md:text-7xl font-bold text-primary mb-6 text-balance">
-              Creative
-              <span className="text-accent block animate-pulse-glow">Developer</span>
+              Mujtaba
+              <span className="text-accent block animate-pulse-glow">Ahmed</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-pretty">
-              Crafting exceptional digital experiences with modern technologies and innovative design
+            I’m a final-year Electrical Engineering student with a strong technical background, pursuing coding as a hobby and enjoying algorithmic problem-solving on LeetCode for fun.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-start items-start mb-12">
