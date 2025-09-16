@@ -7,40 +7,31 @@ import { Calendar, MapPin } from "lucide-react"
 
 const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
+    title: "Freelance AI Automation Specialist",
+    company: "Self-Employed",
+    location: "Rawalpindi, Pakistan",
+    period: "2024 - Present (6 months)",
     description:
-      "Leading frontend development for enterprise applications, mentoring junior developers, and implementing modern React patterns.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+      "Developing AI-powered automation solutions for clients, creating intelligent chatbots, and implementing workflow automation using N8N and various AI APIs.",
+    technologies: ["Python", "AI APIs", "N8N", "Automation", "LLM"],
   },
   {
-    title: "Full Stack Developer",
-    company: "Digital Solutions Co.",
-    location: "New York, NY",
-    period: "2020 - 2022",
+    title: "Data Structures & Algorithms Instructor",
+    company: "Private Tutoring",
+    location: "Rawalpindi, Pakistan",
+    period: "2024 (3 months)",
     description:
-      "Developed and maintained full-stack web applications, collaborated with design teams, and optimized application performance.",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
+      "Taught Data Structures and Algorithms concepts to students, helping them improve their problem-solving skills and prepare for technical interviews.",
+    technologies: ["Python", "C++", "DSA", "Teaching", "Problem Solving"],
   },
   {
-    title: "Frontend Developer",
-    company: "Creative Agency",
-    location: "Los Angeles, CA",
-    period: "2019 - 2020",
+    title: "Competitive Programming Enthusiast",
+    company: "LeetCode Platform",
+    location: "Online",
+    period: "2023 - Present",
     description:
-      "Built responsive websites and interactive web applications for various clients, focusing on user experience and performance.",
-    technologies: ["JavaScript", "Vue.js", "SCSS", "Webpack"],
-  },
-  {
-    title: "Junior Web Developer",
-    company: "StartUp Ventures",
-    location: "Austin, TX",
-    period: "2018 - 2019",
-    description:
-      "Contributed to multiple web projects, learned modern development practices, and collaborated with cross-functional teams.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+      "Solved 400+ algorithmic problems on LeetCode, achieving rank 236,874 globally. Focused on enhancing coding skills and mastering various algorithmic patterns.",
+    technologies: ["Python", "C++", "Algorithms", "Data Structures", "Problem Solving"],
   },
 ]
 

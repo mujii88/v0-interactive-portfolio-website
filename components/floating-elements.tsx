@@ -80,19 +80,19 @@ export function FloatingElements() {
       </div>
 
       <div
-        className="absolute top-32 right-1/4 text-accent/20 text-2xl font-mono animate-float-complex"
+        className="absolute top-32 right-1/4 text-accent/40 text-2xl font-mono animate-float-complex"
         style={{ animationDelay: "2.5s" }}
       >
         {"</>"}
       </div>
       <div
-        className="absolute bottom-32 left-1/4 text-secondary/20 text-xl font-mono animate-float-complex"
+        className="absolute bottom-32 left-1/4 text-secondary/40 text-xl font-mono animate-float-complex"
         style={{ animationDelay: "4.5s" }}
       >
         {"{}"}
       </div>
       <div
-        className="absolute top-2/3 right-1/5 text-accent/20 text-lg font-mono animate-float-complex"
+        className="absolute top-2/3 right-1/5 text-accent/40 text-lg font-mono animate-float-complex"
         style={{ animationDelay: "1.8s" }}
       >
         {"()"}

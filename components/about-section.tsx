@@ -1,73 +1,43 @@
 "use client"
-
-import { useEffect, useRef, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Code, Palette, Rocket, Users } from "lucide-react"
+import { Bot, Code2, Brain, Sparkles } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const features = [
   {
-    icon: Code,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable, and efficient code following best practices",
+    icon: Bot,
+    title: "AI Automation",
+    description: "Building intelligent automation systems using N8N workflows and AI tools",
   },
   {
-    icon: Palette,
-    title: "Creative Design",
-    description: "Bringing ideas to life with modern, user-centered design principles",
+    icon: Code2,
+    title: "Leetcoder",
+    description: "Solved 408+ problems on LeetCode, mastering data structures and algorithms",
   },
   {
-    icon: Rocket,
-    title: "Performance",
-    description: "Optimizing applications for speed, accessibility, and user experience",
+    icon: Brain,
+    title: "AI/ML",
+    description: "Developing AI-powered applications and machine learning solutions",
   },
   {
-    icon: Users,
-    title: "Collaboration",
-    description: "Working effectively with teams to deliver exceptional results",
+    icon: Sparkles,
+    title: "Creative",
+    description: "Bringing innovative ideas to life through creative problem-solving",
   },
 ]
 
 export function AboutSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.3 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.2 })
 
   return (
     <section id="about" ref={sectionRef} className="py-20 bg-card/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className={`text-center mb-16 transition-all duration-800 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">About Me</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-            I'm a passionate full-stack developer with a love for creating beautiful, functional web applications. With
-            expertise in modern technologies and a keen eye for design, I transform ideas into engaging digital
-            experiences.
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <Card
               key={feature.title}
               className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 ${
-                isVisible ? "animate-scale-in" : "opacity-0"
+                isVisible ? "animate-scale-in" : "opacity-0 translate-y-8"
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >

@@ -1,72 +1,63 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration",
-    image: "/modern-ecommerce-interface.png",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Social Media Content Automation",
+    description:
+      "An intelligent automation system built with N8N that streamlines social media content creation and posting across multiple platforms, leveraging AI tools for content generation and scheduling",
+    image: "/social-media-automation-dashboard-with-ai-content.jpg",
+    technologies: ["N8N", "AI Automation", "Social Media APIs", "Content Generation", "Workflow Automation"],
+    liveUrl:
+      "https://www.linkedin.com/posts/mujtaba-ahmed-488ba7280_n8n-automation-artificialintelligence-activity-7369831558586814464-aqMh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESFH-gBCPOQ49gGaKg6W9NMfHHXUZi_b18",
+    githubUrl: "https://github.com/mujii88",
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates and team features",
-    image: "/task-management-dashboard.png",
-    technologies: ["Next.js", "TypeScript", "Prisma", "Socket.io"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "AI Medical Assistant",
+    description:
+      "An intelligent medical assistant powered by AI tools, professionally designed and deployed on server for users to access healthcare guidance and support",
+    image: "/ai-medical-assistant-interface-with-stethoscope-an.jpg",
+    technologies: ["Python", "AI/ML", "Natural Language Processing", "Web Deployment"],
+    liveUrl:
+      "https://www.linkedin.com/posts/mujtaba-ahmed-488ba7280_excited-to-share-my-latest-project-from-the-activity-7360534618246197248-1thU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESFH-gBCPOQ49gGaKg6W9NMfHHXUZi_b18",
+    githubUrl: "https://github.com/mujii88/LLM_APIs",
   },
   {
-    title: "AI Chat Interface",
-    description: "Modern chat application with AI integration and beautiful animations",
-    image: "/ai-chat-interface-modern-design.jpg",
-    technologies: ["React", "OpenAI API", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "LeetCode Problem Solving",
+    description:
+      "Comprehensive problem-solving journey with 408+ solved problems on LeetCode, demonstrating strong coding skills and algorithmic thinking across various difficulty levels. Achieved rank 236,874 with consistent daily practice.",
+    image: "/leetcode-profile-screenshot.png",
+    technologies: ["Python", "C++", "Java", "Data Structures", "Algorithms"],
+    liveUrl: "https://leetcode.com/u/mujii1036/",
+    githubUrl: "https://leetcode.com/u/mujii1036/",
   },
   {
-    title: "Portfolio Website",
-    description: "Responsive portfolio site with interactive animations and smooth scrolling",
-    image: "/modern-portfolio.png",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Spotify Automation Chatbot",
+    description:
+      "A personal chatbot for Spotify playlist automation that eliminates manual song searching - simply provide song names and the playlist gets updated automatically",
+    image: "/spotify-music-automation-bot-with-playlist-interfa.jpg",
+    technologies: ["Python", "Spotify API", "Chatbot", "Automation", "NLP"],
+    liveUrl:
+      "https://www.linkedin.com/posts/mujtaba-ahmed-488ba7280_spotify-api-automation-activity-7365691029598986240-eoIE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESFH-gBCPOQ49gGaKg6W9NMfHHXUZi_b18",
+    githubUrl: "https://github.com/mujii88/N8N-workflows",
   },
 ]
 
 export function ProjectsSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.2 })
 
   return (
     <section id="projects" ref={sectionRef} className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`text-center mb-16 transition-all duration-800 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+          className={`text-center mb-16 transition-all duration-800 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
+          }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Featured Projects</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
@@ -80,7 +71,11 @@ export function ProjectsSection() {
             <Card
               key={project.title}
               className={`group overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${
-                isVisible ? (index % 2 === 0 ? "animate-slide-in-left" : "animate-slide-in-right") : "opacity-0"
+                isVisible
+                  ? index % 2 === 0
+                    ? "animate-slide-in-left"
+                    : "animate-slide-in-right"
+                  : "opacity-0 translate-x-8"
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
@@ -109,13 +104,17 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="flex gap-3 pt-2">
-                  <Button size="sm" className="bg-accent hover:bg-accent/90">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live Demo
+                  <Button size="sm" className="bg-accent hover:bg-accent/90" asChild>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Live Demo
+                    </a>
                   </Button>
-                  <Button size="sm" variant="outline">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
+                  <Button size="sm" variant="outline" asChild>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </a>
                   </Button>
                 </div>
               </CardContent>

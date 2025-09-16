@@ -6,30 +6,30 @@ import { Progress } from "@/components/ui/progress"
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Programming Languages",
     skills: [
-      { name: "React/Next.js", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "JavaScript", level: 88 },
+      { name: "Python", level: 85 },
+      { name: "C++", level: 80 },
+      { name: "JavaScript", level: 75 },
+      { name: "Java", level: 70 },
     ],
   },
   {
-    title: "Backend",
+    title: "AI & Automation",
     skills: [
-      { name: "Node.js", level: 85 },
-      { name: "Python", level: 80 },
-      { name: "PostgreSQL", level: 82 },
-      { name: "MongoDB", level: 78 },
+      { name: "AI Automation", level: 82 },
+      { name: "Agentic AI", level: 78 },
+      { name: "Data Structures & Algorithms", level: 85 },
+      { name: "Machine Learning", level: 75 },
     ],
   },
   {
-    title: "Tools & Others",
+    title: "Engineering & Tools",
     skills: [
-      { name: "Git/GitHub", level: 90 },
-      { name: "Docker", level: 75 },
-      { name: "AWS", level: 70 },
-      { name: "Figma", level: 85 },
+      { name: "MATLAB", level: 80 },
+      { name: "Proteus", level: 78 },
+      { name: "Verilog", level: 72 },
+      { name: "FPGA/Embedded Systems", level: 75 },
     ],
   },
 ]
