@@ -1,0 +1,543 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to cosmic nebula gradient background */
+  --background: linear-gradient(135deg, #0c0c1d 0%, #1a0d2e 20%, #16213e 40%, #0f3460 60%, #1a0d2e 80%, #0c0c1d 100%);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.12 0.05 280 / 0.8);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.08 0.05 280);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.95 0 0);
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.75 0.25 280);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.65 0.1 280);
+  --muted-foreground: oklch(0.7 0.05 280);
+  --accent: oklch(0.75 0.25 280);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.3 0.1 280 / 0.3);
+  --input: oklch(0.15 0.05 280 / 0.8);
+  --ring: oklch(0.75 0.25 280 / 0.6);
+  --chart-1: oklch(0.7 0.25 260);
+  --chart-2: oklch(0.68 0.27 270);
+  --chart-3: oklch(0.66 0.29 280);
+  --chart-4: oklch(0.64 0.31 290);
+  --chart-5: oklch(0.62 0.33 300);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.97 0 0);
+  --sidebar-foreground: oklch(0.2 0 0);
+  --sidebar-primary: oklch(0.2 0 0);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.75 0.25 280);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.75 0.25 280 / 0.5);
+}
+
+.dark {
+  /* Enhanced dark mode with cosmic deep space gradient */
+  --background: linear-gradient(135deg, #050510 0%, #0f0a1e 20%, #1a1535 40%, #0d2847 60%, #0f0a1e 80%, #050510 100%);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.18 0.08 280 / 0.9);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0.05 280);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.8 0.3 280);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.4 0.1 280);
+  --muted-foreground: oklch(0.708 0.05 280);
+  --accent: oklch(0.8 0.3 280);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0.1 280 / 0.4);
+  --input: oklch(0.269 0.05 280 / 0.8);
+  --ring: oklch(0.8 0.3 280 / 0.6);
+  --chart-1: oklch(0.7 0.25 260);
+  --chart-2: oklch(0.68 0.27 270);
+  --chart-3: oklch(0.66 0.29 280);
+  --chart-4: oklch(0.64 0.31 290);
+  --chart-5: oklch(0.62 0.33 300);
+  --sidebar: oklch(0.205 0.05 280);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.8 0.3 280);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0.1 280);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0.1 280);
+  --sidebar-ring: oklch(0.8 0.3 280 / 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    /* Updated to cosmic nebula animated background with stars */
+    background: var(--background);
+    background-size: 400% 400%;
+    animation: gradient-shift 20s ease infinite;
+    position: relative;
+    @apply text-foreground;
+  }
+
+  /* Enhanced cosmic background with twinkling stars effect */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 15% 25%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 45% 15%, rgba(168, 85, 247, 0.08) 0%, transparent 35%),
+      radial-gradient(circle at 75% 45%, rgba(236, 72, 153, 0.06) 0%, transparent 30%);
+    animation: cosmic-drift 25s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Added twinkling stars overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(1px 1px at 40px 70px, rgba(139, 92, 246, 0.6), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(59, 130, 246, 0.4), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 160px 30px, rgba(168, 85, 247, 0.5), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: twinkle 8s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* Added custom animations for portfolio */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+  }
+}
+
+/* Enhanced gradient animation for more dynamic movement */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes particle {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    scale: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow-slow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes cosmic-drift {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateX(20px) translateY(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-15px) translateY(15px) scale(0.95);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateX(10px) translateY(-20px) scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float-complex {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-30px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(15px) rotate(240deg);
+  }
+}
+
+/* Adding new professional animation keyframes for enhanced profile section */
+@keyframes float-smooth {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+}
+
+@keyframes float-delayed {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translateY(-12px) rotate(2deg) scale(1.05);
+  }
+  66% {
+    transform: translateY(8px) rotate(-1deg) scale(0.95);
+  }
+}
+
+@keyframes float-reverse {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(180deg);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-3px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(2px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float-complex {
+  animation: float-complex 12s ease-in-out infinite;
+}
+
+.animate-particle {
+  animation: particle linear infinite;
+}
+
+.animate-pulse-glow-slow {
+  animation: pulse-glow-slow 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-grid-move {
+  animation: grid-move 20s linear infinite;
+}
+
+.animate-cosmic-drift {
+  animation: cosmic-drift 15s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+/* Adding new animation utility classes for professional profile effects */
+.animate-float-smooth {
+  animation: float-smooth 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 10s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 12s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-slow {
+  animation: float-slow 15s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+
+/* Adding missing animation keyframes for search bar enhancements */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Adding new animation utility classes for search bar */
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
