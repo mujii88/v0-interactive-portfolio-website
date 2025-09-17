@@ -510,6 +510,21 @@
   }
 }
 
+@keyframes float-tech {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-25px) translateX(-5px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-15px) rotate(270deg);
+  }
+}
+
 /* Adding new animation utility classes for search bar */
 .animate-spin-slow {
   animation: spin-slow 3s linear infinite;
@@ -517,6 +532,10 @@
 
 .animate-fade-in {
   animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-float-tech {
+  animation: float-tech ease-in-out infinite;
 }
 
 /* Smooth scroll behavior */
