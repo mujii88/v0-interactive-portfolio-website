@@ -13,9 +13,9 @@ export function SearchSection() {
       <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl animate-float-slow"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Search content */}
-          <div className="order-2 lg:order-1 mb-90">
+          <div className="order-2 lg:order-1 mb-90 mt-8 lg:mt-0">
             <div className="flex justify-center lg:justify-start animate-fade-in-up delay-400">
               <SearchBar />
             </div>
