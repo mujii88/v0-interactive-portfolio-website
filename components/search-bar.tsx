@@ -49,7 +49,7 @@ export function SearchBar() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <div
         className={`transition-all duration-700 ease-out transform ${isExpanded ? "w-[500px] scale-105" : "w-auto scale-100"}`}
       >
@@ -95,7 +95,7 @@ export function SearchBar() {
               )}
               
               {searchResults.length > 0 && (
-                <div className="absolute top-full left-0 mt-2 w-full bg-slate-900/90 backdrop-blur-md border border-purple-500/30 rounded-lg p-4 shadow-lg z-50">
+                <div className="absolute top-full left-0 mt-2 w-full bg-slate-900/90 backdrop-blur-md border border-purple-500/30 rounded-lg p-4 shadow-lg z-[100] max-h-[400px] overflow-y-auto">
                   <h3 className="text-lg font-semibold text-purple-300 mb-2">Search Results:</h3>
                   <ul className="space-y-2">
                     {searchResults.map((result, index) => (
