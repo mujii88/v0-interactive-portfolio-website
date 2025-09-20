@@ -12,7 +12,7 @@ export function SearchSection() {
       <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
       <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl animate-float-slow"></div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Search content */}
           <div className="order-2 lg:order-1 mb-90 mt-8 lg:mt-0">
