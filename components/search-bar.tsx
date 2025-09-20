@@ -63,7 +63,7 @@ export function SearchBar() {
           </Button>
         ) : (
           <div className="relative">
-            <form onSubmit={handleSearch} className="flex items-center gap-2">
+            <form onSubmit={handleSearch} className="flex items-center gap-3">
               <div className="relative">
                 <Input
                   type="text"
