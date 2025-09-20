@@ -138,21 +138,27 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-start items-start mb-12">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground animate-pulse-glow">
-                View My Work
-              </Button>
-              <Button variant="outline" size="lg">
-                Download Resume
-              </Button>
+              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground animate-pulse-glow">
+                  View My Work
+                </Button>
+              </a>
+              <a href="/Mujtaba2_Cv.pdf" download>
+                <Button variant="outline" size="lg">
+                  Download Resume
+                </Button>
+              </a>
             </div>
 
             <div className="flex justify-start space-x-6">
               <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
                 <Github className="h-6 w-6" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
-                <Linkedin className="h-6 w-6" />
-              </Button>
+              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
+                  <Linkedin className="h-6 w-6" />
+                </Button>
+              </a>
               <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
                 <Mail className="h-6 w-6" />
               </Button>
