@@ -49,7 +49,7 @@ export function SearchBar() {
   }
 
   return (
-    <div className="relative z-50">
+    <div className="relative z-50 mr-16">
       <div className="relative">
         {!isExpanded ? (
           <Button
