@@ -88,7 +88,7 @@ export function HeroSection() {
       {techLogos.map((tech, index) => (
         <div
           key={tech.name}
-          className={`absolute w-12 h-12 md:w-14 md:h-14 ${tech.color} border rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm animate-float-tech hover:scale-110 transition-transform duration-300 cursor-pointer`}
+          className={`absolute w-12 h-12 md:w-14 md:h-14 ${tech.color} border rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm animate-float-tech hover:scale-110 hover:bg-transparent transition-transform duration-300 cursor-pointer`}
           style={{
             ...tech.position,
             animationDelay: tech.delay,
@@ -138,30 +138,30 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-start items-start mb-12">
-              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground animate-pulse-glow">
+              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground animate-pulse-glow cursor-pointer">
                   View My Work
                 </Button>
               </a>
-              <a href="/Mujtaba2_Cv.pdf" download>
-                <Button variant="outline" size="lg">
+              <a href="/Mujtaba2_Cv.pdf" download className="cursor-pointer">
+                <Button variant="outline" size="lg" className="cursor-pointer">
                   Download Resume
                 </Button>
               </a>
             </div>
 
             <div className="flex justify-start space-x-6">
-              <a href="https://github.com/mujii88" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
+              <a href="https://github.com/mujii88" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                <Button variant="ghost" size="icon" className="hover:text-accent hover:bg-transparent transition-colors">
                   <Github className="h-6 w-6" />
                 </Button>
               </a>
-              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
+              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                <Button variant="ghost" size="icon" className="hover:text-accent hover:bg-transparent transition-colors">
                   <Linkedin className="h-6 w-6" />
                 </Button>
               </a>
-              <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
+              <Button variant="ghost" size="icon" className="hover:text-accent hover:bg-transparent transition-colors cursor-pointer">
                 <Mail className="h-6 w-6" />
               </Button>
             </div>
