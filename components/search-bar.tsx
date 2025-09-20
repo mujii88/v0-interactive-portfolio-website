@@ -49,7 +49,7 @@ export function SearchBar() {
   }
 
   return (
-    <div className="relative z-50">
+    <div className="fixed top-6 right-6 z-[1000]">
       <div
         className={`transition-all duration-700 ease-out transform ${isExpanded ? "w-[500px] scale-105" : "w-auto scale-100"}`}
       >
@@ -75,7 +75,7 @@ export function SearchBar() {
                   className="w-[420px] bg-slate-900/90 backdrop-blur-md border-purple-500/30 focus:border-purple-400/50 focus:ring-2 focus:ring-purple-500/20 pl-12 pr-4 text-xl py-8 text-white placeholder:text-slate-400 transition-all duration-500 rounded-xl hover:shadow-lg hover:shadow-purple-500/20 focus:scale-[1.02]"
                   autoFocus
                 />
-                <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 ${isLoading ? 'animate-spin' : 'animate-pulse'} text-purple-400`} />
+                <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 ${isLoading ? 'animate-spin' : 'animate-pulse'} text-purple-400 z-[1001]`} />
               </div>
               {isLoading ? (
                 <Button
@@ -95,7 +95,7 @@ export function SearchBar() {
               )}
               
               {searchResults.length > 0 && (
-                <div className="absolute top-full left-0 mt-2 w-full bg-slate-900/90 backdrop-blur-md border border-purple-500/30 rounded-lg p-4 shadow-lg z-[100] max-h-[400px] overflow-y-auto">
+                <div className="absolute top-full right-0 mt-2 w-[420px] bg-slate-900/95 backdrop-blur-md border border-purple-500/30 rounded-lg p-4 shadow-lg z-[1002] max-h-[400px] overflow-y-auto">
                   <h3 className="text-lg font-semibold text-purple-300 mb-2">Search Results:</h3>
                   <ul className="space-y-2">
                     {searchResults.map((result, index) => (
@@ -108,7 +108,7 @@ export function SearchBar() {
               )}
               
               {error && (
-                <div className="absolute top-full left-0 mt-2 w-full bg-red-900/50 backdrop-blur-md border border-red-500/30 rounded-lg p-4 text-red-200 text-sm">
+                <div className="absolute top-full right-0 mt-2 w-[420px] bg-red-900/80 backdrop-blur-md border border-red-500/30 rounded-lg p-4 text-red-200 text-sm z-[1002]">
                   {error}
                 </div>
               )}
