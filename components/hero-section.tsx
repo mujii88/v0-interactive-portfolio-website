@@ -140,11 +140,19 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-start items-start mb-12">
-              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground animate-pulse-glow cursor-pointer">
-                  View My Work
-                </Button>
-              </a>
+              <Button 
+                size="lg" 
+                className="relative overflow-hidden group bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={() => {
+                  const projectsSection = document.getElementById('projects');
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                <span className="relative z-10">View My Work</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-accent/50 via-white/20 to-accent/50 opacity-0 group-hover:opacity-100 transition-all duration-1000 transform -translate-x-full group-hover:translate-x-full"></span>
+              </Button>
               <a href="/Mujtaba2_Cv.pdf" download className="cursor-pointer">
                 <Button variant="outline" size="lg" className="cursor-pointer">
                   Download Resume
