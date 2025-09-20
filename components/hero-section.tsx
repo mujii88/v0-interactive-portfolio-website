@@ -151,9 +151,11 @@ export function HeroSection() {
             </div>
 
             <div className="flex justify-start space-x-6">
-              <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
-                <Github className="h-6 w-6" />
-              </Button>
+              <a href="https://github.com/mujii88" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
+                  <Github className="h-6 w-6" />
+                </Button>
+              </a>
               <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer">
                 <Button variant="ghost" size="icon" className="hover:text-accent transition-colors">
                   <Linkedin className="h-6 w-6" />
