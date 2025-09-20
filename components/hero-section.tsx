@@ -142,7 +142,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-start items-start mb-12">
               <Button 
                 size="lg" 
-                className="relative overflow-hidden group bg-accent hover:bg-accent/90 text-accent-foreground"
+                className="relative overflow-hidden group bg-accent hover:bg-accent/80 text-accent-foreground transition-colors duration-300 cursor-pointer"
                 onClick={() => {
                   const projectsSection = document.getElementById('projects');
                   if (projectsSection) {
