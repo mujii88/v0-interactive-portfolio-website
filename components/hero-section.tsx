@@ -88,7 +88,7 @@ export function HeroSection() {
       {techLogos.map((tech, index) => (
         <div
           key={tech.name}
-          className={`absolute w-12 h-12 md:w-14 md:h-14 ${tech.color} border rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm animate-float-tech hover:scale-110 hover:bg-transparent transition-transform duration-300 cursor-pointer`}
+          className={`absolute w-12 h-12 md:w-14 md:h-14 ${tech.color} border rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm animate-float-tech hover:scale-110 hover:bg-gradient-to-br hover:from-accent/20 hover:to-purple-500/20 transition-all duration-300 cursor-pointer group`}
           style={{
             ...tech.position,
             animationDelay: tech.delay,
@@ -96,7 +96,9 @@ export function HeroSection() {
           }}
           title={tech.name}
         >
-          {tech.svg}
+          <span className="group-hover:scale-110 transition-transform duration-300">
+            {tech.svg}
+          </span>
         </div>
       ))}
       
