@@ -163,7 +163,17 @@ export function HeroSection() {
                   <Linkedin className="h-6 w-6" />
                 </Button>
               </a>
-              <Button variant="ghost" size="icon" className="hover:text-accent hover:bg-transparent transition-colors cursor-pointer">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="hover:text-accent hover:bg-transparent transition-colors cursor-pointer"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 <Mail className="h-6 w-6" />
               </Button>
             </div>
