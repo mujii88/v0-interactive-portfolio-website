@@ -153,13 +153,13 @@ export function HeroSection() {
             </div>
 
             <div className="flex justify-start space-x-6">
-              <a href="https://github.com/mujii88" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                <Button variant="ghost" size="icon" className="hover:text-accent hover:bg-transparent transition-colors">
+              <a href="https://github.com/mujii88" target="_blank" rel="noopener noreferrer" className="inline-flex">
+                <Button variant="ghost" size="icon" className="hover:text-accent hover:bg-transparent transition-colors cursor-pointer">
                   <Github className="h-6 w-6" />
                 </Button>
               </a>
-              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                <Button variant="ghost" size="icon" className="hover:text-accent hover:bg-transparent transition-colors">
+              <a href="https://www.linkedin.com/in/mujtaba-ahmed-488ba7280/" target="_blank" rel="noopener noreferrer" className="inline-flex">
+                <Button variant="ghost" size="icon" className="hover:text-accent hover:bg-transparent transition-colors cursor-pointer">
                   <Linkedin className="h-6 w-6" />
                 </Button>
               </a>
